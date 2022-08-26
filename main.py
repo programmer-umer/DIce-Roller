@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 pygame.init()
 
 HEIGHT = 150
@@ -38,19 +39,22 @@ side5 = pygame.image.load('5.png')
 side6 = pygame.image.load('6.png')
 
 def select_side(window):
-    side = random.randint(1,6) 
-    if side == 1:
-        window.blit(side1, (70,0))
-    if side == 2:
-        window.blit(side2, (70,0))
-    if side == 3:
-        window.blit(side3, (70,0))
-    if side == 4:
-        window.blit(side4, (70,0))
-    if side == 5:
-        window.blit(side5, (70,0))
-    if side == 6:
-        window.blit(side6, (70,0))
+    for times in range(random.randint(10, 30)):
+        side = random.randint(1,6) 
+        if side == 1:
+            window.blit(side1, (70,0))
+        if side == 2:
+            window.blit(side2, (70,0))
+        if side == 3:
+            window.blit(side3, (70,0))
+        if side == 4:
+            window.blit(side4, (70,0))
+        if side == 5:
+            window.blit(side5, (70,0))
+        if side == 6:
+            window.blit(side6, (70,0))
+        pygame.display.flip()
+        pygame.time.delay(100)
 
 def main():
     run = True
